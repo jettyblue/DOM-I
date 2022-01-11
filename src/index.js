@@ -48,10 +48,9 @@ console.log('project wired!')
 
 // NAV
 const navLinks = document.querySelectorAll('nav a');
-const linkTexts = Object.values(siteContent.nav)
-console.log(linkTexts);
+const navLinkTexts = Object.values(siteContent.nav);
 navLinks.forEach(function(link, idx) {
-  link.textContent = linkTexts[idx];
+  link.textContent = navLinkTexts[idx];
   link.classList.add('italic');
 });
 
@@ -64,51 +63,54 @@ const navItem6 = document.querySelector('.nav-item-6');
 const navImage = document.querySelector('.img-src');
 
 
-// LOGO
+// IMAGES
 const logoImg = document.querySelector('#logo-img');
 logoImg.src = siteContent.images['logo-img'];
+
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent.images['cta-img'];
+
+const accentImg = document.querySelector('.middle-img');
+accentImg.src = siteContent.images['accent-img'];
 
 
 // CTA
 const domIsAwesome = document.querySelector('.cta-text h1');
 domIsAwesome.textContent = siteContent.cta.h1;
+// document.querySelector('.cta-text h1).textContent = siteContent.cta.h1;
 
 const getStartedBtn = document.querySelector('.cta-text button')
 getStartedBtn.textContent = siteContent.cta.button;
-
-const ctaImg = document.querySelector('#cta-img');
-ctaImg.src = siteContent.images['cta-img'];
+// document.querySelector('.cta-text button).textContent = siteContent.cta.button;
 
 
-// MAIN-CONTENT
+// TOP CONTENT
 const topContent = document.querySelector('.top-content');
-const bottomContent = document.querySelector('.bottom-content');
-const h4sBottom = document.querySelectorAll('h4');
-const psBottom = document.querySelectorAll('p');
 
-// MAIN-CONTENT FEATURES
+// FEATURES
 topContent.children[0].children[0].textContent = siteContent['main-content']['features-h4'];
 topContent.children[0].children[1].textContent = siteContent['main-content']['features-content'];
 
-// MAIN-CONTENT ABOUT
+// ABOUT
 topContent.children[1].children[0].textContent = siteContent['main-content']['about-h4'];
 topContent.children[1].children[1].textContent = siteContent['main-content']['about-content']
 
-// MAIN-CONTENT WIDE IMAGE
-const accentImg = document.querySelector('.middle-img');
-accentImg.src = siteContent.images['accent-img'];
 
-// MAIN-CONTENT SERVICES
+// BOTTOM CONTENT
+const bottomContent = document.querySelector('.bottom-content');
+const h4sBottom = bottomContent.querySelectorAll('h4');
+const psBottom = bottomContent.querySelectorAll('p');
+
+
+// SERVICES
 h4sBottom[0].textContent = siteContent['main-content']['services-h4'];
-psBottom[0].textContent = siteContent['main-content']['service-content'];
-// h4sBottom[0].textContent = siteContent['main-content']['services-h4'];
-// psBottom[0].textContent = siteContent['main-content']['services-content'];
+psBottom[0].textContent = siteContent['main-content']['services-content'];
 
-// MAIN-CONTENT PRODUCT
+// PRODUCT
 h4sBottom[1].textContent = siteContent['main-content']['product-h4']
 psBottom[1].textContent = siteContent['main-content']['product-content'];
 
-// MAIN-CONTENT VISION
+// VISION
 h4sBottom[2].textContent = siteContent['main-content']['vision-h4'];
 psBottom[2].textContent = siteContent['main-content']['vision-content'];
 
